@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 import api from '../../Services/api';
 
 import './styles.css';
-import logo from '../../assets/logo.svg'
+import logoImage from '../../assets/logo.svg'
 import padlock from '../../assets/padlock.png'
 
 export default function Login(){
@@ -29,7 +29,7 @@ export default function Login(){
             localStorage.setItem('userName', userName);
             localStorage.setItem('accessToken', response.data.accessToken);
             localStorage.setItem('refreshToken', response.data.refreshToken);
-
+            
             //Rota para onde vai ser redirecionado
             navigate('/books');
 
@@ -42,7 +42,7 @@ export default function Login(){
     return (
         <div className="login-container">
             <session className="form">
-                <img src={logo} alt="Logo"/>
+                <img src={logoImage} alt="Logo"/>
                 
                 <form onSubmit={login} >
                     <h1>Access your Account </h1>
